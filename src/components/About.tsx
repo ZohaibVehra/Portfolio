@@ -23,9 +23,12 @@ const About: React.FC = () => {
             <h1 className="mt-10 md:mt-10 text-2xl whitespace-nowrap scale-y-110">WHO AM I?</h1>
             <div className="mt-10 md:mt-10 hidden md:block flex-1 h-px bg-gray-400" />
         </div>
+        <div className="flex justify-center w-full md:hidden px-6 mt-4">
+            <img src="cleanKloe.png" className="mx-auto" />
+        </div>
 
         {/*text about me*/}
-        <div className="mt-8 flex flex-col md:flex-row items-stretch w-full px-4 md:px-[10%] gap-8">
+        <div className="mt-4 md:mt-8 flex flex-col md:flex-row items-stretch w-full px-4 md:px-[10%] gap-8">
             <div className="basis-full md:basis-[55%] flex flex-col items-center">
                 <p className="py-4 text-lg font-semibold text-gray-700 scale-y-105">
                 Hey there! I’m Zohaib, a software developer specializing in Full-Stack 
