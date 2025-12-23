@@ -1,6 +1,18 @@
+import { useEffect, useState } from "react";
+
+
 const TopBar: React.FC = () => {
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => {
+    requestAnimationFrame(() => setMounted(true));
+  }, []);
+
   return (
-    <header className="fixed top-0 left-0 z-50 w-full h-24 bg-black border-b border-gray-800 text-white">
+    <header
+    className={`fixed top-0 left-0 z-50 w-full h-24 bg-black border-b border-gray-800 text-white
+      transition-all duration-1700 ease-out
+      ${mounted ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-full"}`}
+    >
       <div className="max-w-7xl mx-auto h-full flex items-center px-10 pl-30">
         
         <div className="flex-shrink-0 text-2xl font-semibold">

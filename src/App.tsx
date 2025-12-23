@@ -7,9 +7,31 @@ import Experience from './components/Experience'
 import Skills from './components/Skills'
 import About from './components/About'
 import Contact from './components/Contact'
-
+import { useEffect, useRef, useState } from "react";
 
 function App() {
+
+  const useTimeSinceLoad = () => {
+    const startTime = useRef(performance.now());
+    const [elapsed, setElapsed] = useState(0);
+
+    useEffect(() => {
+      const interval = setInterval(() => {
+        const elapsed = performance.now() - startTime.current;
+        setElapsed(elapsed);
+
+        if (elapsed >= 5000) {
+          clearInterval(interval);
+        }
+      }, 16);
+
+      return () => clearInterval(interval);
+    }, []);
+
+    return elapsed;
+  };
+
+  const elapsed = useTimeSinceLoad();
 
   return (
     <>
@@ -22,7 +44,14 @@ function App() {
           <TopBar />
         </div>
       </>
-      <Banner />
+
+      <div
+          className={`fixed inset-0 z-[40] bg-white transition-opacity duration-700
+          ${elapsed > 2700 ? "opacity-0 pointer-events-none" : "opacity-100"}`}
+      />
+
+      
+      {elapsed > 1200 && <Banner />} 
       <Projects />
       <Experience />
       <Skills />
