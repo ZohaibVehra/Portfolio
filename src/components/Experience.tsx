@@ -12,8 +12,8 @@ const WorkCard: React.FC<WorkCardProp> = ({ company, icon, title, location, date
         <div className="rounded-xl w-[90%] md:w-[70%] flex flex-col bg-[#f1f0f2] border-3 border-gray-300 overflow-hidden">
             <div className="relative">
                 <div className="pt-5 pb-2 md:pb-5 md:pt-5 px-2 md:px-10 flex flex-row items-center">
-                    <div className="hidden md:block bg-[#fdfdfd] h-25 w-25 flex items-center justify-center rounded-xl z-[2]">
-                        <img src={icon} className="h-20" />
+                    <div className="hidden md:flex bg-[#fdfdfd] h-24 w-24 items-center justify-center rounded-xl z-[2]">
+                        <img src={icon} className="h-20 block" />
                     </div>
                     
                     <div className="ml-[2%] flex flex-col justify-center">
