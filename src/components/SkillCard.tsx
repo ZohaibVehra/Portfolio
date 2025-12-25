@@ -24,7 +24,7 @@ type ValCardProps = {
 
 const ValCard: React.FC<ValCardProps> = ({val}) => {
     return (
-        <div className="rounded-lg bg-[#6d9ce0] px-3 h-12 flex items-center justify-center">
+        <div className="rounded-lg bg-[#6d9ce0] px-3 h-12 flex items-center justify-center hover:bg-[#4c7bbd]">
             <p className="text-md md:text-xl text-white whitespace-nowrap">{val}</p>
         </div>
     )

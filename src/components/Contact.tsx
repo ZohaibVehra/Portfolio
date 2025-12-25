@@ -9,12 +9,14 @@ const Contact: React.FC = () => {
                Open to new opportunities, collaborations, and conversations. Feel free to reach out if you’d like to connect!
             </p>
             <div className="flex items-center justify-center">
-                <img
+                <a href="mailto:zohaib.vehra@gmail.com">
+                    <img
                     src="email.png"
-                    className="mt-7 h-[50px]"
-                />
+                    className="mt-7 h-[50px] cursor-pointer"
+                    />
+                </a>
             </div>
-            
+
             <p className="mb-12 mt-2 text-md md:text-lg text-gray-600 font-semibold text-center">
                 <a
                     href="mailto:zohaib.vehra@gmail.com"

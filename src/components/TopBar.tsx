@@ -43,6 +43,19 @@ const TopBar: React.FC = () => {
               About
             </div>
           </a>
+          <a
+            href="https://www.linkedin.com/in/zohaib-vehra/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-2 text-2xl hover:text-gray-400 py-6"
+          >
+            <img
+              src="linkedin.png"
+              alt="LinkedIn"
+              className="h-7 w-7 mt-1"
+            />
+            <span>LinkedIn</span>
+          </a>
         </nav>
 
       </div>
