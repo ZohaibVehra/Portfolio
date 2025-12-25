@@ -31,6 +31,7 @@ const ValCard: React.FC<ValCardProps> = ({val}) => {
 }
 
 const SkillCard: React.FC<SkillCardProps> = ({title, values, image}) => {
+  const minImage= useMinWidth(1191);
   const wideEnough = useMinWidth(1600);
 
   if (wideEnough) {
@@ -60,17 +61,22 @@ const SkillCard: React.FC<SkillCardProps> = ({title, values, image}) => {
 
   return (
     <div
-        className="rounded-xl bg-[#f1f0f2] w-full md:w-[75%] min-h-[5rem] border border-gray-300 flex items-start px-6 py-3 md:py-4 gap-6 flex-col md:flex-row"
+        className="relative rounded-xl bg-[#f1f0f2] w-full md:w-[75%] min-h-[5rem] border border-gray-300 flex items-start px-6 py-3 md:py-4 gap-6 flex-col md:flex-row"
     >
         <h1 className="text-xl font-semibold text-gray-700 whitespace-nowrap mt-2">
         {title}
         </h1>
 
-        <div className="flex flex-wrap gap-4">
+        <div className="flex flex-wrap gap-4 z-10">
         {values.map(val => (
             <ValCard key={val} val={val} />
         ))}
         </div>
+        {minImage && <img
+          src={image}
+          alt=""
+          className="absolute right-0 top-0 h-full w-[60%] object-cover pointer-events-none"
+        />}
     </div>
     );
 };

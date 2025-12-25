@@ -19,6 +19,11 @@ type FSProps = {
 }
 
 const FS: React.FC<FSProps> = ({ onClose, img, desc, link, source, title}) => {
+  let shrink = false
+  if( window.innerWidth / window.innerHeight > 1.75 && window.innerHeight < 800){
+    shrink = true
+  } 
+
   let l = true
   if(link.length < 4) l = false
   return (
@@ -38,9 +43,16 @@ const FS: React.FC<FSProps> = ({ onClose, img, desc, link, source, title}) => {
             x
           </button>
         </div>
-        <div className="p-1 md:py-8 mb-3 rounded-lg md:rounded-2xl w-full md:w-[90%] bg-gray-300 items-center flex justify-center">
-          <img src={img} className="md:text-lg rounded-lg md:rounded-xl md:max-w-[95%]" />
-        </div>
+        {shrink && 
+          <div className="p-1 md:py-4 mb-3 rounded-lg md:rounded-2xl w-full md:w-[60%] bg-gray-300 items-center flex justify-center">
+            <img src={img} className="md:text-lg rounded-lg md:rounded-xl md:max-w-[95%]" />
+          </div>
+        }
+        {!shrink &&
+          <div className="p-1 md:py-8 mb-3 rounded-lg md:rounded-2xl w-full md:w-[90%] bg-gray-300 items-center flex justify-center">
+            <img src={img} className="md:text-lg rounded-lg md:rounded-xl md:max-w-[95%]" />
+          </div>
+        }
         
         <h1 className="mx-2 text-left text-white md:text-lg mb-1 md:mb-0">
           {desc}
@@ -68,12 +80,12 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ img, date, title, desc, link,
         link={link}
         source={source}
         title={title}/>}
-      <button className="max-h-[90%] hover:bg-gray-100 transition rounded-xl w-full md:flex-1 bg-[#fdfdfd] rounded-lg border-3 border-gray-300
+      <button className="cursor-pointer max-h-[90%] hover:bg-gray-100 transition rounded-xl w-full md:flex-1 bg-[#fdfdfd] rounded-lg border-3 border-gray-300
       flex flex-col p-3"
       onClick={() => setFSs(!FSs)}>
         <img src={img} className="rounded-lg md:m-3 md:mb-0"/>
-        <h1 className="ml-[1%] text-left px-1 pt-2 text-md text-gray-700">{title}</h1>
-        <h1 className="ml-[1%] text-left px-1 md:pt-2 text-sm text-gray-500">{date}</h1>
+        <h1 className="ml-[1%] text-left px-1 pt-2 text-md md:text-lg text-gray-700">{title}</h1>
+        <h1 className="ml-[1%] text-left px-1 md:pt-1 text-sm md:text-base text-gray-500">{date}</h1>
       </button>
     </>
     

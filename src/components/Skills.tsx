@@ -14,7 +14,7 @@ const Skills: React.FC = () => {
             <SkillCard image="/2.png" title="Backend" values={["Node.js", "Express.js", "SpringBoot"]}/>
             <SkillCard image="/3.png" title="Languages" values={["TypeScript", "JavaScript", "Python", "Java"]}/>
             <SkillCard image="/3.png" title="Databases" values={["MongoDB", "PostgreSQL", "SQL", "NoSQL"]}/>
-            <SkillCard image="/4.png" title="Developer Tools" values={["RestAPI", "GraphQL", "Jenkins", "Git", "Kubernetes", "Docker"]}/>
+            <SkillCard image="/4.png" title="Developer Tools" values={["RestAPI", "GraphQL", "Jenkins", "Git", "Kubernetes"]}/>
         </div>
     </div>
   );

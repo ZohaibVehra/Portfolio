@@ -5,7 +5,7 @@ const Banner: React.FC = () => {
   const [isDesktop, setIsDesktop] = useState(false);
   const [introStarted, setIntroStarted] = useState(false);
   const [introFinished, setIntroFinished] = useState(false);
-
+  
   useEffect(() => {
     const check = () => setIsDesktop(window.innerWidth >= 768);
     check();
@@ -31,6 +31,7 @@ const Banner: React.FC = () => {
     if (!isDesktop || !introFinished) return;
     setActiveSide(null);
   };
+
 
   return (
     <div
@@ -59,6 +60,7 @@ const Banner: React.FC = () => {
           src="robotic.png"
           className="hidden md:block w-full h-full object-cover"
         />
+
       </div>
 
       <div
